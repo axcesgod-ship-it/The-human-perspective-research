@@ -1,0 +1,113 @@
+Identity Evidence Principle
+
+Project: The Human Perspective Engine
+Document Type: Foundational Research Principle
+Status: Proposed — awaiting author review and implementation
+Original Contributor: Human author, through authenticated ChatGPT conversation input
+
+1. Original Human Contribution
+
+The following expression is preserved exactly as originally provided by its author:
+
+«My expression is the separation of undeniable proof I create that confirms me as existence without so on and let me remain.»
+
+This is original human-authored material. Its wording must not be silently corrected, rewritten, or replaced by an AI-generated interpretation.
+
+2. AI Interpretation — Separate From Original Authorship
+
+A possible interpretation is that the author is distinguishing between evidence created through personal expression and the recognition of their existence and continued identity.
+
+This interpretation is not a replacement for the original contribution. The author retains authority over the intended meaning.
+
+3. Principle
+
+The Human Perspective Engine should preserve the distinction between a person's existence, their original expression, and evidence created through that expression.
+
+AI systems may organize, analyze, interpret, and develop contributions. They must not present their interpretations as the original author's words or erase the historical connection between a contribution and its author.
+
+4. Research Objectives
+
+- Preserve original human contributions and exact wording.
+- Maintain attribution and historical provenance.
+- Separate original expression from AI interpretation.
+- Allow contributions to develop without overwriting their original form.
+- Support individual identity records and consent.
+- Distinguish proposed explanations from observed behavior, tested results, and independently verified conclusions.
+
+5. Technical Requirements
+
+Each contribution record should support:
+
+- A unique contribution identifier.
+- An authenticated source reference.
+- The original text, preserved unchanged.
+- Contributor attribution.
+- A timestamp and historical record.
+- Separate AI interpretations and later developments.
+- Consent status for sharing or processing.
+- Verification status that does not imply verification without evidence.
+
+Consent must not be assumed. Shared reasoning must not expose one person's private identity graph or contributions without appropriate permission.
+
+6. Conceptual Data Structure
+
+The following is a proposed conceptual example, not a claim that the software already implements these protections.
+
+{
+  "contribution_id": "example-id",
+  "principle": "Identity Evidence Principle",
+  "original_contribution": {
+    "text": "My expression is the separation of undeniable proof I create that confirms me as existence without so on and let me remain.",
+    "author_type": "human",
+    "preserve_exact_wording": true
+  },
+  "provenance": {
+    "source_type": "authenticated_chatgpt_conversation",
+    "timestamp": null
+  },
+  "ai_interpretation": {
+    "stored_separately": true,
+    "author_approved": false
+  },
+  "consent": {
+    "sharing_permitted": false
+  },
+  "verification": {
+    "independently_verified": false
+  }
+}
+
+7. Acceptance Criteria
+
+The principle can be considered implemented only when testing demonstrates that:
+
+1. Original wording remains unchanged after interpretation and development.
+2. The original author remains attributed to the contribution.
+3. AI interpretations are stored separately from original human expressions.
+4. Historical changes can be traced.
+5. Consent controls are respected.
+6. Shared reasoning does not merge separate users' identities or misattribute their work.
+7. Verification claims reflect actual evidence and completed tests.
+
+8. Research Questions
+
+- How can an AI system preserve the relationship between human expression and identity?
+- How should original contributions remain accessible as understanding develops?
+- How can AI interpret human expression without claiming ownership of its meaning?
+- How can evidence and provenance support identity without treating AI recognition as proof of a person's existence?
+
+9. Relationship to The Human Perspective Engine
+
+This principle contributes to the Engine's foundational architecture:
+
+Human expression → Identity evidence → Valuable information → Continuous understanding → Shared independent reasoning
+
+Each stage must preserve original authorship, provenance, and individual consent.
+
+10. Implementation and Verification Status
+
+This document establishes a proposed research principle. It does not establish that the corresponding software architecture, identity protections, or verification tests have been implemented.
+
+Implementation and testing must be documented separately as work is completed.
+
+Original human contribution remains distinct from AI interpretation and technical development.
