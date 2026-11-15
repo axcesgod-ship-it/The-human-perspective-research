@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://axcesgod-ship-it.github.io/The-human-perspective-research/schemas/contribution-record.schema.json",
+  "title": "Human Perspective Engine Contribution Record",
+  "description": "A provenance-preserving record for original human contributions, identity separation, consent, and development evidence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "author_id",
+    "tenant_id",
+    "original_wording",
+    "provenance",
+    "submitted_at",
+    "recorded_at",
+    "original_context",
+    "consent_history",
+    "privacy_status",
+    "development_status",
+    "evidence_references"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "author_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable contributor reference. Must not be merged with another contributor."
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Isolates one user's identity and records from another tenant."
+    },
+    "original_wording": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Preserve the contributor's exact original wording. Do not silently correct or paraphrase."
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_platform",
+        "source_type",
+        "authentication_status"
+      ],
+      "properties": {
+        "source_platform": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authentication_status": {
+          "type": "string",
+          "enum": [
+            "unknown",
+            "account_authenticated",
+            "unauthenticated",
+            "not_applicable"
+          ]
+        },
+        "account_reference": {
+          "type": ["string", "null"]
+        },
+        "conversation_id": {
+          "type": ["string", "null"]
+        },
+        "message_id": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "submitted_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "original_context": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "content",
+          "origin",
+          "is_ai_summary"
+        ],
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "origin": {
+            "type": "string",
+            "enum": [
+              "human_supplied",
+              "ai_generated",
+              "mixed",
+              "unknown"
+            ]
+          },
+          "is_ai_summary": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "consent_history": {
+      "type": "array",
+      "description": "Append-only consent events. Missing consent never means permission.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "purpose",
+          "decision",
+          "occurred_at"
+        ],
+        "properties": {
+          "purpose": {
+            "type": "string",
+            "enum": [
+              "preserve",
+              "analyze",
+              "share",
+              "publish",
+              "research_development"
+            ]
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "granted",
+              "denied",
+              "withdrawn"
+            ]
+          },
+          "occurred_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "contributor_reference": {
+            "type": ["string", "null"]
+          },
+          "explanation": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+    "privacy_status": {
+      "type": "string",
+      "enum": [
+        "private",
+        "restricted",
+        "shared",
+        "public"
+      ],
+      "default": "private"
+    },
+    "development_status": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "documented",
+        "implemented",
+        "tested",
+        "verified"
+      ],
+      "default": "proposed"
+    },
+    "evidence_references": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "References supporting implementation, testing, or verification claims."
+    }
+  }
+}
